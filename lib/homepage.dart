@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(10.0),
           child: GNav(
               
-              backgroundColor: Color.fromARGB(240, 255, 255, 150),
+              backgroundColor: const Color.fromARGB(240, 255, 255, 150),
               activeColor:Colors.grey.shade800,
               tabBackgroundColor: Colors.white,
               onTabChange: _selectedIndex,
