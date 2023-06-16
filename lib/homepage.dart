@@ -11,7 +11,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   var currentIndex = 0;
-
   void _selectedIndex(int index){
     setState(() {
       currentIndex = index;
@@ -29,11 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ],
-        title: const Row(
+        title: const  Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Hi', style: TextStyle(fontSize: 15)),
             Text(
-              ',Zoey',
+              ',\tZoey',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -41,37 +41,37 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        centerTitle: true,
+        
       ),
       drawer: const Drawer(),
       bottomNavigationBar:  Container(
-        color: const Color.fromARGB(255, 250, 250, 121),
+        color: const Color.fromARGB(255, 255, 255, 150),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: GNav(
-              gap: 5,
-              backgroundColor: const Color.fromARGB(255, 250, 250, 121),
+              
+              backgroundColor: Color.fromARGB(240, 255, 255, 150),
               activeColor:Colors.grey.shade800,
               tabBackgroundColor: Colors.white,
               onTabChange: _selectedIndex,
-              padding: const EdgeInsets.symmetric(horizontal:8, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal:15, vertical: 15),
               
               tabs: const [
                 GButton(
                   icon: Icons.home,
-                  text: "Home",
+                  text: "\t\tHome",
                 ),
                 GButton(
                   icon: Icons.shopping_cart,
-                  text: "Shop",
+                  text: "\t\tShop",
                 ),
                 GButton(
-                  icon: Icons.favorite_outlined,
-                  text: "Like",
+                  icon: Icons.favorite,
+                  text: "\t\tLike",
                 ),
                 GButton(
                   icon: Icons.settings,
-                  text: "Settings",
+                  text: "\t\tSettings",
                 ),
               ],),
         ),
