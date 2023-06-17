@@ -9,8 +9,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+   Color color = const Color.fromARGB(238, 250, 250, 174);
   var currentIndex = 0;
+
   void _selectedIndex(int index){
     setState(() {
       currentIndex = index;
@@ -45,12 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: const Drawer(),
       bottomNavigationBar:  Container(
-        color: const Color.fromARGB(255, 255, 255, 150),
+        color: color,
+        width: MediaQuery.of(context).size.width * 0.8 ,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: GNav(
-              
-              backgroundColor: const Color.fromARGB(240, 255, 255, 150),
+            
+              backgroundColor: color,
               activeColor:Colors.grey.shade800,
               tabBackgroundColor: Colors.white,
               onTabChange: _selectedIndex,
