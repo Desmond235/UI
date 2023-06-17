@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Hi', style: TextStyle(fontSize: 15)),
+              Text('Hi', style: TextStyle(fontSize: 13)),
               Text(
                 ',\tZoey',
                 style: TextStyle(

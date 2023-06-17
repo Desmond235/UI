@@ -5,16 +5,21 @@ class Items extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Text(
-            'Home',
-            style: TextStyle(fontSize: 25),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.4,
+      child: const Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'New Collections',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
           ),
-        )
-      ],
+          SizedBox(height: 10,)
+        ],
+      ),
     );
   }
 }

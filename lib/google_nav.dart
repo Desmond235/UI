@@ -10,6 +10,7 @@ class GoogleNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
         color: color,
         width: MediaQuery.of(context).size.width * 0.8,
         child: Padding(
@@ -31,7 +32,7 @@ class GoogleNavBar extends StatelessWidget {
                 text: "\t\tShop",
               ),
               GButton(
-                icon: Icons.favorite,
+                icon: Icons.favorite_border_outlined,
                 text: "\t\tLike",
               ),
               GButton(
