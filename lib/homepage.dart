@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ui_design/items.dart';
+import 'package:ui_design/google_nav.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -9,75 +10,75 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   Color color = const Color.fromARGB(238, 250, 250, 174);
   var currentIndex = 0;
 
-  void _selectedIndex(int index){
+  static const List<Widget> pages = [
+    Items(),
+    Center(
+      child: Text(
+        'Add to chart',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        'Favorite',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        'Settings',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    ),
+  ];
+  void _selectedIndex(int index) {
     setState(() {
-      currentIndex = index;
+      currentIndex = index++;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-            ),
-          ),
-        ],
-        title: const  Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Hi', style: TextStyle(fontSize: 15)),
-            Text(
-              ',\tZoey',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search,
               ),
             ),
           ],
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Hi', style: TextStyle(fontSize: 15)),
+              Text(
+                ',\tZoey',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
-        
-      ),
-      drawer: const Drawer(),
-      bottomNavigationBar:  Container(
-        color: color,
-        width: MediaQuery.of(context).size.width * 0.8 ,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: GNav(
-            
-              backgroundColor: color,
-              activeColor:Colors.grey.shade800,
-              tabBackgroundColor: Colors.white,
-              onTabChange: _selectedIndex,
-              padding: const EdgeInsets.symmetric(horizontal:15, vertical: 15),
-              
-              tabs: const [
-                GButton(
-                  icon: Icons.home,
-                  text: "\t\tHome",
-                ),
-                GButton(
-                  icon: Icons.shopping_cart,
-                  text: "\t\tShop",
-                ),
-                GButton(
-                  icon: Icons.favorite,
-                  text: "\t\tLike",
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: "\t\tSettings",
-                ),
-              ],),
-        ),
-      ),
-    );
+        drawer: const Drawer(),
+        body: pages.elementAt(currentIndex),
+        bottomNavigationBar: GoogleNavBar(
+          currentIndex: currentIndex,
+          selectedIndex: _selectedIndex,
+        ));
   }
 }
