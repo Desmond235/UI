@@ -7,17 +7,25 @@ class Items extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.4,
-      child: const Column(
+      child:  Column(
         // mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
+        children:  [
+          const  Text(
             'New Collections',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
           ),
-          SizedBox(height: 10,)
+          const SizedBox(height: 10,),
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius:BorderRadius.circular(20) ,
+                child: Image.asset("assets/images/pexels.jpg"),
+              ),
+            ],
+          ),
         ],
       ),
     );
