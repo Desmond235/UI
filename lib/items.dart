@@ -18,24 +18,25 @@ class Items extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             children: [
+              Stack(
+                children: [
+                   Positioned(child: image("assets/images/pexels.jpg", 200,150)),
+                  container("ksh.1500", 20, 120),
+                ],
+              ),
+              const SizedBox(width: 100),
               Expanded(
                 child: Stack(
                   children: [
-                     image("assets/images/nike-yellow.png", 122),
-                    container("ksh.1500", 10, 95),
+                    Positioned(
+                      child: image("assets/images/nike-yellow.png", 200,80)),
+                    container("ksh. 750", 10, 15),
                   ],
                 ),
-              ),
-              // const SizedBox(width: 10),
-              Stack(
-                children: [
-                  image("assets/images/nike-yellow.png", 80),
-                  container("ksh. 750", 10, 15),
-                ],
               )
             ],
           ),
@@ -44,14 +45,20 @@ class Items extends StatelessWidget {
     );
   }
 
-  Widget image(String asset, double height) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.asset(
-        asset,
-        fit: BoxFit.cover,
-        height: height,
-      ),
+  Widget image(String asset,double width, double height) {
+    return Row(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            asset,
+            alignment: Alignment.topLeft,
+            fit: BoxFit.cover,
+            height: height,
+            width: width
+          ),
+        ),
+      ],
     );
   }
 
