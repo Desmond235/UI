@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart ';
+import 'package:ui_design/image_text.dart';
+import 'package:ui_design/category.dart';
 
 class Items extends StatelessWidget {
   const Items({super.key});
@@ -6,12 +8,12 @@ class Items extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width ,
+      width: MediaQuery.of(context).size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.only(left:20),
+            padding: const EdgeInsets.only(left: 20),
             child: const Text(
               'New Collections',
               style: TextStyle(
@@ -21,69 +23,79 @@ class Items extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 25,
           ),
           Row(
             children: [
-              const SizedBox(width: 15,),
+              const SizedBox(
+                width: 15,
+              ),
               Stack(
                 children: [
-                  Positioned(
-                    child: image("assets/images/pexels.jpg", 200, 150),
-                  ),
-                   container("ksh.1500", 20, 100),
+                  image("assets/images/pexels.jpg", 200, 185),
+                  container("ksh.1500", 10, 150),
                 ],
               ),
-              const SizedBox(width: 100),
-              Stack(
-                children: [
-                  image(
-                    "assets/images/nike-yellow.png",
-                    200,
-                    80,
-                  ),
-                  container("ksh. 750", 10, 15),
-                ],
+              const SizedBox(width: 30),
+              Container(
+                margin: const EdgeInsets.only(bottom: 135),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        image(
+                          "assets/images/nike-yellow.png",
+                          200,
+                          80,
+                        ),
+                        container("ksh. 750", 10, 43),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 0,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 10),
+                          child: Stack(
+                            children: [
+                              Container(
+                                child: image(
+                                  "assets/images/nike-red.jpeg",
+                                  120,
+                                  70,
+                                ),
+                              ),
+                              container("ksh. 450", 10, 10),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(7),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(238, 250, 250, 174),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_right_alt),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(width:10),
             ],
           ),
+          const Category()
         ],
       ),
     );
-  }
-
-  Widget image(
-    String asset,
-    double width,
-    double height,
-  ) {
-    return Row(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset(asset,
-              // alignment: Alignment.center,
-              fit: BoxFit.cover,
-              height: height,
-              width: width),
-        ),
-      ],
-    );
-  }
-
-  Widget container(String text, double horizontal, double vertical) {
-    return Container(
-        margin: EdgeInsets.symmetric(
-          vertical: vertical,
-          horizontal: horizontal,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-        decoration: BoxDecoration(
-            color: Colors.black, borderRadius: BorderRadius.circular(10)),
-        child: Text(
-          text,
-          style: const TextStyle(color: Colors.white),
-        ));
   }
 }
