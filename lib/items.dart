@@ -25,14 +25,10 @@ class Items extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 25
-            ),
+            const SizedBox(height: 25),
             Row(
               children: [
-                const SizedBox(
-                  width: 15
-                ),
+                const SizedBox(width: 15),
                 Stack(
                   children: [
                     image("assets/images/pexels.jpg", 200, 185),
@@ -48,11 +44,7 @@ class Items extends StatelessWidget {
                     children: [
                       Stack(
                         children: [
-                          image(
-                            "assets/images/nike-yellow.png",
-                            200,
-                            80
-                          ),
+                          image("assets/images/nike-yellow.png", 200, 80),
                           container("ksh. 750", 10, 43),
                         ],
                       ),
@@ -65,30 +57,22 @@ class Items extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Stack(
                               children: [
-                                Container(
-                                  child: image(
-                                    "assets/images/nike-red.jpeg",
-                                    120,
-                                    70
-                                  ),
-                                ),
+                                image("assets/images/nike-red.jpeg", 120, 70),
                                 container("ksh. 450", 10, 10),
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            width: 10
-                          ),
+                          const SizedBox(width: 10),
                           Container(
                             padding: const EdgeInsets.all(15),
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(238, 250, 250, 174),
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            child:  InkWell(
-                              onTap: (){},
+                            child: InkWell(
+                              onTap: () {},
                               child: const Icon(Icons.arrow_right_alt),
-                            )
+                            ),
                           ),
                         ],
                       ),

@@ -55,9 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-              ),
+              icon: const Icon(Icons.search),
             ),
           ],
           title: const Row(
