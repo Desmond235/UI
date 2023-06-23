@@ -5,55 +5,83 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> images = [
-      'assets/images/puma-logo.png',
-      'assets/images/jordan-logo.png',
-      'assets/images/nikeLogo.png',
-      'assets/images/adidas-logo.png'
-    ];
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: const Color.fromARGB(238, 250, 250, 174),
-      ),
-      child: Column(
+      margin: const EdgeInsets.only(left: 20,),
+      width: MediaQuery.of(context).size.width * 0.9,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const SizedBox(
-            height: 20,
+          const Text(
+            'Choose Category',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
-           const Row(
-            children: [
-               Text(
-                'Choose Category',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              SizedBox(height: 5,),
-               Expanded(
-                child: InkWell(child: Row(
+          Flexible(
+            fit: FlexFit.tight,
+            child: InkWell(
+              
+              onTap: (){},
+                child: const Row(
                   children: [
-                    Text('data'),
+                    SizedBox(width: 190,),
+                    Text('See more'),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Icon(Icons.arrow_right)
                   ],
                 )),
-              ),
-            ],
           ),
-          Row(
-            children: [
-              ListView.builder(
-                itemBuilder: (context, int index) {
-                  return Image(
-                    width: 10,
-                    height: 10,
-                    image: AssetImage(images[index]),
-                  );
-                },
-                itemCount: images.length,
-              ),
-            ],
-          ),
+           const SizedBox(height: 50,)
         ],
       ),
     );
   }
+}
+
+Widget logo( BuildContext context) {
+  List<String> images = [
+    'assets/images/puma-logo.png',
+    'assets/images/jordan-logo.png',
+    'assets/images/nikeLogo.png',
+    'assets/images/adidas-logo.png'
+  ];
+  return SizedBox(
+    width: MediaQuery.of(context).size.width,
+    child: Row(
+       
+      children: [
+        Expanded(
+          child: SizedBox(
+            height: 60,
+            width: 100,
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, int index) {
+                return Container(
+                  margin: const EdgeInsets.only(left: 20,),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color.fromARGB(238, 250, 250, 174),
+                  
+                  ),
+                  child: InkWell(
+                    
+                    onTap: (){},
+                    child: Image(
+                      width: 70,
+                      height: 50,
+                      image: AssetImage(images[index]),
+                    ),
+                  ),
+                );
+              },
+              itemCount: images.length,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
