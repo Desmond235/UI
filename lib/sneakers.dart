@@ -56,12 +56,12 @@ class Sneakers extends StatelessWidget {
         ),
         Column(
           children: [
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Text(snText,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                )),
             Text(prText),
           ],
         )
