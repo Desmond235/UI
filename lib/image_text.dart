@@ -18,11 +18,11 @@ import 'package:flutter/material.dart ';
     );
   }
 
-  Widget container(String text, double horizontal, double vertical) {
+  Widget container(String text, double left, double top) {
     return Container(
-      margin: EdgeInsets.symmetric(
-        vertical: vertical,
-        horizontal: horizontal,
+      margin: EdgeInsets.only(
+        left: left,
+        top: top,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
       decoration: BoxDecoration(

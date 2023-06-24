@@ -38,7 +38,7 @@ class Category extends StatelessWidget {
   }
 }
 
-Widget logo( BuildContext context) {
+Widget logo( BuildContext context,Color color) {
   List<String> images = [
     'assets/images/puma-logo.png',
     'assets/images/jordan-logo.png',
@@ -50,35 +50,36 @@ Widget logo( BuildContext context) {
     child: Row(
        
       children: [
-        Expanded(
-          child: SizedBox(
-            height: 60,
-            width: 100,
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, int index) {
-                return Container(
-                  margin: const EdgeInsets.only(left: 20,),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromARGB(238, 250, 250, 174),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 55,
+          child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, int index) {
+              return Container(
+                margin: const EdgeInsets.only(left: 25,),
+                padding: const EdgeInsets.all(10),
+                width: 80,
+                height: 10,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: color,
+                
+                ),
+                child: InkWell(
                   
+                  onTap: (){},
+                  child: Image(
+                    width: 50,
+                    height: 20,
+                    color: Colors.grey[800],
+                    image: AssetImage(images[index]),
                   ),
-                  child: InkWell(
-                    
-                    onTap: (){},
-                    child: Image(
-                      width: 70,
-                      height: 50,
-                      image: AssetImage(images[index]),
-                    ),
-                  ),
-                );
-              },
-              itemCount: images.length,
-            ),
+                ),
+              );
+            },
+            itemCount: images.length,
           ),
         ),
       ],
