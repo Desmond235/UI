@@ -6,8 +6,8 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20,),
-      width: MediaQuery.of(context).size.width * 0.9,
+      margin: const EdgeInsets.only(left: 25,),
+      width: MediaQuery.of(context).size.width ,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -58,9 +58,9 @@ Widget logo( BuildContext context,Color color) {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, int index) {
               return Container(
-                margin: const EdgeInsets.only(left: 25,),
+                margin: const EdgeInsets.only(left: 20,),
                 padding: const EdgeInsets.all(10),
-                width: 80,
+                width: 90,
                 height: 10,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -68,7 +68,6 @@ Widget logo( BuildContext context,Color color) {
                 
                 ),
                 child: InkWell(
-                  
                   onTap: (){},
                   child: Image(
                     width: 50,

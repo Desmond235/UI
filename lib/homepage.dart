@@ -51,32 +51,33 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.search),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Hi', style: TextStyle(fontSize: 13)),
+            Text(
+              ',\tZoey',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Hi', style: TextStyle(fontSize: 13)),
-              Text(
-                ',\tZoey',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
         ),
-        drawer: const Drawer(),
-        body: pages.elementAt(currentIndex),
-        bottomNavigationBar: GoogleNavBar(
-          currentIndex: currentIndex,
-          selectedIndex: _selectedIndex,
-        ));
+      ),
+      drawer: const Drawer(),
+      body: pages.elementAt(currentIndex),
+      bottomNavigationBar: GoogleNavBar(
+        currentIndex: currentIndex,
+        selectedIndex: _selectedIndex,
+      ),
+    );
   }
 }

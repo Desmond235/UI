@@ -90,7 +90,7 @@ class Items extends StatelessWidget {
             const Category(),
             const SizedBox(height: 10),
             logo(context, color),
-            const SizedBox(height: 10,),
+            const SizedBox(height: 20),
             Sneakers(color: color)
           ],
         ),
