@@ -60,7 +60,7 @@ Widget logo( BuildContext context,Color color) {
               return Container(
                 margin: const EdgeInsets.only(left: 20,),
                 padding: const EdgeInsets.all(10),
-                width: 90,
+                width: MediaQuery.of(context).size.width  *0.2,
                 height: 10,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
