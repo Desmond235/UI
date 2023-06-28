@@ -29,7 +29,7 @@ class Items extends StatelessWidget {
             const SizedBox(height: 25),
             SizedBox(
               //  height: MediaQuery.of(context).size.height/3.5,
-               width: MediaQuery.of(context).size.width  *0.2,
+               width: MediaQuery.of(context).size.width  *0.9,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

@@ -15,9 +15,9 @@ class Sneakers extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: MediaQuery.of(context).size.height / 1.52,
+          height: MediaQuery.of(context).size.height * 01.1,
           width: MediaQuery.of(context).size.width * 0.93,
-          margin: const EdgeInsets.only(left: 20),
+          margin: const EdgeInsets.only(left: 20,),
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -27,6 +27,8 @@ class Sneakers extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return Container(
+                height: 200,
+                // margin: const EdgeInsets.only(bottom: 30),
                 decoration: BoxDecoration(
                     color: color, borderRadius: BorderRadius.circular(20)),
                 child: InkWell(

@@ -6,31 +6,31 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 25,),
-      width: MediaQuery.of(context).size.width ,
+      margin: const EdgeInsets.only(left: 25,right: 10,),
+      // width: MediaQuery.of(context).size.width ,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
-            'Choose Category',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          Flexible(
+          const Flexible(
             fit: FlexFit.tight,
-            child: InkWell(
-              
-              onTap: (){},
-                child: const Row(
-                  children: [
-                    SizedBox(width: 190,),
-                    Text('See more'),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(Icons.arrow_right)
-                  ],
-                )),
+            child:  Text(
+              'Choose Category',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
           ),
+          InkWell(
+            
+            onTap: (){},
+              child: const Row(
+                children: [
+                  SizedBox(width: 190,),
+                  Text('See more'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Icon(Icons.arrow_right)
+                ],
+              )),
            const SizedBox(height: 50,)
         ],
       ),
@@ -46,7 +46,7 @@ Widget logo( BuildContext context,Color color) {
     'assets/images/adidas-logo.png'
   ];
   return SizedBox(
-    width: MediaQuery.of(context).size.width,
+    // width: MediaQuery.of(context).size.width,
     child: Row(
        
       children: [
