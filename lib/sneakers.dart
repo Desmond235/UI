@@ -15,7 +15,7 @@ class Sneakers extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: MediaQuery.of(context).size.height * 01.1,
+          height: 500,
           width: MediaQuery.of(context).size.width * 0.93,
           margin: const EdgeInsets.only(
             left: 20,
