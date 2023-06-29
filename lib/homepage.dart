@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/items.dart';
 import 'package:ui_design/google_nav.dart';
+import 'package:ui_design/hide_nav_bar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -11,6 +12,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var currentIndex = 0;
+  late ScrollController controller;
+
+  @override
+  void initState(){
+    super.initState;
+    controller = ScrollController();
+  }
+
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
+
 
   static const List<Widget> pages = [
     Items(),
@@ -44,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   void _selectedIndex(int index) {
     setState(() {
-      currentIndex = index++;
+      currentIndex = index;
     });
   }
 
@@ -73,10 +88,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       drawer: const Drawer(),
-      body: pages.elementAt(currentIndex),
-      bottomNavigationBar: GoogleNavBar(
-        currentIndex: currentIndex,
-        selectedIndex: _selectedIndex,
+      body: SingleChildScrollView(
+        controller: controller,
+        child: pages.elementAt(currentIndex)
+      ),
+      bottomNavigationBar:ScrollToHideNavBar (
+        controller: controller,
+        child: GoogleNavBar(
+          currentIndex: currentIndex,
+          selectedIndex: _selectedIndex,
+        ),
       ),
     );
   }

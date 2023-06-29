@@ -17,7 +17,9 @@ class Sneakers extends StatelessWidget {
         Container(
           height: MediaQuery.of(context).size.height * 01.1,
           width: MediaQuery.of(context).size.width * 0.93,
-          margin: const EdgeInsets.only(left: 20,),
+          margin: const EdgeInsets.only(
+            left: 20,
+          ),
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -48,28 +50,25 @@ class Sneakers extends StatelessWidget {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-
-          children: [
-          Image.asset(
-            asset,
-            width: 100,
-            height: 100,
-          ),
-          const SizedBox(width: 70),
-          Container(
-            margin: const EdgeInsets.only(bottom: 45,right: 10,top: 10),
-            child: const Icon(
-              Icons.favorite_border_outlined,
-              color: Colors.red,
-            ),
-          ),
-        ]),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                asset,
+                width: 100,
+                height: 100,
+              ),
+              const SizedBox(width: 70),
+              Container(
+                margin: const EdgeInsets.only(bottom: 45, right: 10, top: 10),
+                child: const Icon(
+                  Icons.favorite_border_outlined,
+                  color: Colors.red,
+                ),
+              ),
+            ]),
         const SizedBox(height: 30),
-        Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
-           children: [
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(snText,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
