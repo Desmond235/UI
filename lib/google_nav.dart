@@ -15,16 +15,16 @@ class GoogleNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color,
-      width: MediaQuery.of(context).size.width * 0.8,
+      
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(5.0),
         child: GNav(
           backgroundColor: color,
           activeColor: Colors.grey.shade800,
           tabBackgroundColor: Colors.white,
           selectedIndex: currentIndex,
           onTabChange: selectedIndex,
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           tabs: const [
             GButton(
               icon: Icons.home,

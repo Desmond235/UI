@@ -15,17 +15,16 @@ class Sneakers extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: 500,
-          width: MediaQuery.of(context).size.width * 0.93,
-          margin: const EdgeInsets.only(
-            left: 20,
-          ),
+          height: MediaQuery.of(context).size.height * 0.9,
+          width: MediaQuery.of(context).size.width * 0.91,
+          margin: const EdgeInsets.only(left: 20,),
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 7,
               mainAxisSpacing: 7,
+              
             ),
             itemBuilder: (context, index) {
               return Container(
@@ -34,6 +33,7 @@ class Sneakers extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: color, borderRadius: BorderRadius.circular(20)),
                 child: InkWell(
+                   borderRadius: BorderRadius.circular(20),
                   onTap: () {},
                   child: sneakers[index],
                 ),
@@ -50,25 +50,28 @@ class Sneakers extends StatelessWidget {
     return Column(
       children: [
         Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(
-                asset,
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 70),
-              Container(
-                margin: const EdgeInsets.only(bottom: 45, right: 10, top: 10),
-                child: const Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.red,
-                ),
-              ),
-            ]),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+
+          children: [
+          Image.asset(
+            asset,
+            width: 100,
+            height: 100,
+          ),
+          const SizedBox(width: 70),
+          Container(
+            margin: const EdgeInsets.only(bottom: 45,right: 10,top: 10),
+            child: const Icon(
+              Icons.favorite_border_outlined,
+              color: Colors.red,
+            ),
+          ),
+        ]),
         const SizedBox(height: 30),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
           Text(snText,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,

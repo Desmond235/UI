@@ -89,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: const Drawer(),
       body: SingleChildScrollView(
-        controller: controller,
         child: pages.elementAt(currentIndex)
       ),
       bottomNavigationBar:ScrollToHideNavBar (

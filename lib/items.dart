@@ -28,14 +28,14 @@ class Items extends StatelessWidget {
           const SizedBox(height: 25),
           SizedBox(
             //  height: MediaQuery.of(context).size.height/3.5,
-             width: MediaQuery.of(context).size.width  *0.9,
+             width: MediaQuery.of(context).size.width ,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(width: 15),
                 Stack(
                   children: [
-                    image("assets/images/pexels.jpg", 200, 180),
+                    image("assets/images/pexels.jpg", MediaQuery.of(context).size.width *0.4, 180),
                     container("ksh.1500", 10, 150),
                   ],
                 ),
@@ -48,7 +48,7 @@ class Items extends StatelessWidget {
                     children: [
                       Stack(
                         children: [
-                          image("assets/images/nike-yellow.png", 200, 80),
+                          image("assets/images/nike-yellow.png", MediaQuery.of(context).size.width *0.46, 80),
                           container("ksh. 750", 10, 50),
                         ],
                       ),
@@ -61,7 +61,7 @@ class Items extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Stack(
                               children: [
-                                image("assets/images/nike-red.jpeg", 120, 70),
+                                image("assets/images/nike-red.jpeg", MediaQuery.of(context).size.width *0.3, 70),
                                 container("ksh. 450", 10, 10),
                               ],
                             ),
@@ -69,6 +69,7 @@ class Items extends StatelessWidget {
                           const SizedBox(width: 10),
                           Container(
                             padding: const EdgeInsets.all(15),
+                            width: MediaQuery.of(context).size.width *0.11 ,
                             decoration: BoxDecoration(
                               color: color,
                               borderRadius: BorderRadius.circular(15),
