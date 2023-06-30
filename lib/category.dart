@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Category extends StatelessWidget {
   const Category({Key? key}) : super(key: key);
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(left: 25,right: 10,),
